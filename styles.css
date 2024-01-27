@@ -3,6 +3,7 @@
 :root {
   --text-color: white;
   --text-size: 1.2rem;
+  --calculator-color: rgb(19, 19, 19);
 }
 
 *{
@@ -11,6 +12,7 @@
   box-sizing: border-box;
   font-size: var(--text-size);
   font-family: Orbitron;
+  border: none;
 }
 
 body {
@@ -22,30 +24,61 @@ body {
   width: 100vw;
 }
 
-main {
-  /* border: 1px solid blue; */
-  padding: 5px;
-  min-width: 400px;
-}
-
 .calculator {
   padding: 40px 20px 20px;
-  background-color: rgb(19, 19, 19);
-  border: 1px solid white;
-  width: 100%;
+  background-color: var(--calculator-color);
+  min-width: 400px;
   display: flex;
   flex-direction: column;
   row-gap: 30px;
-  /* justify-content: center; */
-  align-items: center;
+  /* align-items: center; */
   border-radius: 10px;
 }
 
-.num-btn{
+.screen{
+  text-align: center;
+  background-color: white;
+  height: 85px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.section {
+  display: flex;
+  width: 100%;
+}
+
+/* Button Styles */
+button {
+  cursor: pointer;
+}
+
+.num-btn, 
+.operator-btn {
   width: 60px;
   height: 60px;
   border-radius: 30px;
-  border: none;
+}
+
+/* MIDDLE SECTION */
+.buttons-div {
+  display: flex;
+  width: 100%;
+}
+
+.num-btn-div {
+  background-color: rgb(75, 75, 75);
+  padding: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 75%;
+  height: 300px;
+  row-gap: 4%;
+  column-gap: 8%;
+  border-radius: 10px;
+}
+/* Button from 0 to 9 */
+.num-btn{
   background-color: rgb(0, 0, 0);
   color: var(--text-color);
   transition: background-color 0.15s;
@@ -57,12 +90,16 @@ main {
   background-color: rgb(65, 65, 65);
 }
 
+/* Operator buttons */
+.operator-btn-div {
+  display: flex;
+  width: 25%;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+}
+
 .operator-btn {
-  border: none;
-  width: 65px;
-  height: 65px;
-  border-radius: 33px;
-  text-align: center;
   background-color: rgb(75, 75, 75);
   color: var(--text-color);
   transition: background-color 0.15s;
@@ -74,57 +111,15 @@ main {
   background-color: rgb(40, 40, 40);
 }
 
-.buttons-div {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  height: 100%;
-  column-gap: 0%;
-}
-
-button {
-  cursor: pointer;
-}
-
-.section {
-  width: 100%;
-  display: flex;
-  column-gap: 5px;
-  padding: 5px 10px;
-  justify-content: space-between;
-}
-
-.num-btn-div {
-  background-color: rgb(75, 75, 75);
-  padding: 15px;
-  border: 1px solid black;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  width: 75%;
-  height: 300px;
-  row-gap: 4%;
-  column-gap: 8%;
-  border-radius: 10px;
-}
-
-.operator-btn-div {
-  display: flex;
-  width: 25%;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: end;
-}
-
+/* BOTTOM SECTION */
 .bottom {
   column-gap: 4%;
-  width: 95%;
-  margin-top: -20px;
+  margin-top: -10px;
 }
 .modify-btn {
-  padding: 5px;
+  padding: 0px;
   flex-grow: 1;
   height: 60px;
-  border: 1px solid black;
   border-radius: 10px;
   background-color: rgb(125, 125, 125);
   color: var(--text-color);
@@ -137,14 +132,7 @@ button {
   background-color: rgb(95, 95, 95);
 }
 
-.modify-btn.equal {
+.equal {
   width: 30px;
+  border-radius: 30px;
 }
-.screen{
-  text-align: center;
-  background-color: white;
-  height: 85px;
-  width: 100%;
-  border-radius: 8px;
-}
-
