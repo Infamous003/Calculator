@@ -18,21 +18,23 @@
 body {
   background-color: white;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
   height: 100vh;
   width: 100vw;
 }
 
 .calculator {
-  padding: 40px 20px 20px;
+  /* padding: 40px 20px 20px; */
+  padding: 1.2em 1em;
   background-color: var(--calculator-color);
-  width: 400px;
+  min-width: 400px;
+  margin: 0px auto;
   display: flex;
   flex-direction: column;
-  row-gap: 30px;
+  row-gap: 1.5em;
   /* align-items: center; */
-  border-radius: 10px;
+  border-radius: 0.5em;
 }
 
 .screen{
@@ -40,24 +42,12 @@ body {
   background-color: white;
   height: 85px;
   width: 100%;
-  border-radius: 8px;
+  border-radius: 0.5em;
 }
 
 .section {
   display: flex;
   width: 100%;
-}
-
-/* Button Styles */
-button {
-  cursor: pointer;
-}
-
-.num-btn, 
-.operator-btn {
-  width: 60px;
-  height: 60px;
-  border-radius: 30px;
 }
 
 /* MIDDLE SECTION */
@@ -68,15 +58,36 @@ button {
 
 .num-btn-div {
   background-color: rgb(75, 75, 75);
-  padding: 15px;
+  padding: 0.7em;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   width: 75%;
   height: 300px;
   row-gap: 4%;
   column-gap: 8%;
-  border-radius: 10px;
+  border-radius: 0.5em;
 }
+
+/* Button Styles */
+button {
+  cursor: pointer;
+}
+
+.num-btn{
+  max-width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.operator-btn {
+  width: 70%;
+  height: 82%;
+  border-radius: 49%;
+  text-align: center;
+  align-self: center;
+  justify-self: center;
+}
+
 /* Button from 0 to 9 */
 .num-btn{
   background-color: rgb(0, 0, 0);
@@ -92,11 +103,9 @@ button {
 
 /* Operator buttons */
 .operator-btn-div {
-  display: flex;
+  display: grid;
+  grid-template-rows: repeat(1f, 4);
   width: 25%;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: end;
 }
 
 .operator-btn {
@@ -117,10 +126,9 @@ button {
   margin-top: -10px;
 }
 .modify-btn {
-  padding: 0px;
   flex-grow: 1;
-  height: 60px;
-  border-radius: 10px;
+  min-height: 60px;
+  border-radius: 0.5em;
   background-color: rgb(125, 125, 125);
   color: var(--text-color);
   transition: background-color 0.15s;
@@ -135,4 +143,22 @@ button {
 .equal {
   width: 30px;
   border-radius: 30px;
+}
+
+footer {
+  height: 60px;
+}
+
+header {
+  font-size: 2rem;
+  padding: 15px;
+}
+
+footer, header {
+  min-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: rgb(29, 29, 29);
 }
