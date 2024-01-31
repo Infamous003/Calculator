@@ -8,6 +8,7 @@ let optrButtons = document.querySelectorAll('.operator-btn');
 let buttons = document.querySelectorAll('button');
 let equals = document.querySelector('.equal');
 let clear = document.querySelector('.clear');
+let deletebtn = document.querySelector('.delete');
 let isOperatorPresent = false;
 
 function add(a, b) { return a + b }
@@ -41,11 +42,22 @@ clear.addEventListener('click', () => {
 
 equals.addEventListener('click', () => {
   let result = operate(+num1, operator, +num2);
-  userInput.innerText = Number.isInteger(result) ? result : result.toFixed(1);
+  userInput.innerText = Number.isInteger(result) ? result : result.toFixed(3);
   num1 = result;
   num2 = 0;
   operator = null;
 });
+
+deletebtn.addEventListener('click' , () => {
+  let enteredString = userInput.innerText;
+  let len = enteredString.length;
+  let newsString = enteredString.slice(0, len-1);
+  let newNum1 = num1.toString().slice(0, num1.length-1);
+  let newNum2 = num2.toString().slice(0, num2.length-1);
+  num1 = newNum1;
+  num2 = newNum2;
+  userInput.innerText = newsString;
+})
 
 showText();
 
@@ -72,18 +84,3 @@ function showText() {
     })
   })
 }
-
-// function displayText() {
-//   buttons.forEach((btn) => {
-//     btn.addEventListener('click', () => {
-//       if(!Number(userInput.innerText.charAt(userInput.innerText.length))){
-//         expression = userInput.innerText.charAt(userInput.innerText.length);
-//       }
-//       expression += btn.innerText;
-//       userInput.innerText = expression;
-      
-//     })
-//   })
-// }
-
-// displayText();
