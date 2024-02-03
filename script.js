@@ -94,10 +94,6 @@ function showText() {
   let span = document.createElement('span');
   numButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-      // if(userInput.innerText.length >= 10) {
-      //   alert("Stop being an ASS. Limit is 10 numbers!");
-      //   return ;
-      // }
       if(operator) {
         userInput.innerText += btn.innerText;
         num2 += btn.innerText;
@@ -111,10 +107,6 @@ function showText() {
   });
   optrButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-      // if(userInput.innerText.length >= 10) {
-      //   alert("Stop being an ASS. Limit is 10 numbers!");
-      //   return ;
-      // }
       operator = btn.innerText;
       span.innerText = btn.innerText;
       userInput.appendChild(span);
