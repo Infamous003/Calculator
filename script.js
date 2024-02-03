@@ -50,7 +50,6 @@ clearButton.addEventListener('click', () => {
 deleteButton.addEventListener('click', () => {
   let enteredString = userInput.innerText;
 
-  console.log(enteredString.charAt(enteredString.length-1));
   if(enteredString.charAt(enteredString.length-1) == operands.operator){
     operands.operator = null;
     userInput.innerText = enteredString.slice(0, enteredString.length-1);
