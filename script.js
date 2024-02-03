@@ -37,6 +37,7 @@ function operate(num1, operator, num2) {
   }
   
 }
+
 clear.addEventListener('click', () => {
   userInput.innerText = '';
   num1 = num2 = 0;
@@ -115,3 +116,9 @@ function showText() {
 
 }
 
+function isInputLarge(){
+  if(userInput.innerText.length > 5){
+    return true;
+  }
+  return false;
+}
